@@ -44,7 +44,7 @@ You can generate random bytes using the library by calling the `bytes()` method.
 
 ## Meshachviktor\SecureRandom\SecureRandom::bytes(int $length) :string
 
-This method takes an optional integer argument named $length. By default $length has a value of 64 but can be any number between the range of 1 and 64 (inclusive). Supplying a value less than 1 or greater than 64 will result in the method throwing a `\RangeException`. The `bytes()` method is limited to returning a maximum of 64 bytes for a lot of reasons. If you need more than 64 bytes use PHP's built in `random_int()` instead.
+This method takes an optional integer argument named $length. By default $length has a value of 64 but can be any number between the range of 1 and 64 (inclusive). Supplying a value less than 1 or greater than 64 will result in the method throwing a `\RangeException`. The `bytes()` method is limited to returning a maximum of 64 bytes for a lot of reasons. If you need more than 64 bytes use PHP's built in `random_bytes()` instead.
 
 ## Examples
 
