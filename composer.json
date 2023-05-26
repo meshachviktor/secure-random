@@ -1,0 +1,21 @@
+{
+    "name": "meshachviktor/secure-random",
+    "description": "A simple library for securely generating random values.",
+    "keywords": ["random", "secure", "csprng", "otp", "uuid"],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Meshachviktor\\SecureRandom\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gbemileke Adeleke",
+            "email": "meshachakinz@gmail.com",
+            "homepage": "https://github.com/meshachviktor"
+        }
+    ],
+    "require": {
+        "php": "^7.0 || ^8.0"
+    }
+}
