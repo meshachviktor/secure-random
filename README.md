@@ -28,7 +28,7 @@ The list above is not exhaustive. You can use SecureRandom for a lot more.
 To use SecureRandom add the dependency to your project using the following composer command.
 
 ```
-$ composer require meshachviktor/secure-random
+composer require meshachviktor/secure-random
 ```
 
 Then import the library to your project as shown below.
@@ -42,7 +42,7 @@ use Meshachviktor\SecureRandom\SecureRandom;
 
 You can generate random bytes using the library by calling the `bytes()` method. 
 
-## Meshachviktor\SecureRandom\SecureRandom::bytes(int $length) :string
+## SecureRandom::bytes(int $length) :string
 
 This method takes an optional integer argument named `$length`. By default `$length` has a value of 64 but can be any number between the range of 1 and 64 (inclusive). Supplying a value less than 1 or greater than 64 will result in the method throwing `\RangeException`. The `bytes()` method is limited to returning a maximum of 64 bytes due to a lot of reasons. If you need more than 64 bytes use PHP's built in `random_bytes()` instead.
 
@@ -60,7 +60,7 @@ $bytes = SecureRandom::bytes(65);  // Throws \RangeException
 
 The library provides some methods for generating random floating point numbers. The fractional part of all floating point numbers generated are limited to a maximum of 14 decimal digits. All numbers returned by these methods are less than 1. Negative values are in the range of -0.99999999999999 to -0.1 while positive values are in the range of 0.1 to 0.99999999999999.
 
-## Meshachviktor\SecureRandom\SecureRandom::float(int $fractional_digits = 14) :float
+## SecureRandom::float(int $fractional_digits = 14) :float
 
 The `float()` method returns a random positive or negative floating point number. The method takes an optional integer argument, `$fractional_digits`, whose value defaults to 14. The value of `$fractional_digits` determines how many decimal digits will appear after the decimal point of the floating point number generated. Supplying a value less than 1 or greater than 14 causes the method to throw `\RangeException`.
 
@@ -72,7 +72,7 @@ $float = SecureRandom::float(10);  // -0.5774096379
 $float = SecureRandom::float(0);   // Throws \RangeException
 $float = SecureRandom::float(15);  // Throws \RangeException
 ```
-## Meshachviktor\SecureRandom\SecureRandom::positiveFloat(int $fractional_digits = 14) :float
+## SecureRandom::positiveFloat(int $fractional_digits = 14) :float
 
 The `positiveFloat()` method returns a random positive floating point number. The method takes an optional integer argument, `$fractional_digits`, whose value defaults to 14. The value of `$fractional_digits` determines how many decimal digits will appear after the decimal point of the floating point number generated. Supplying a value less than 1 or greater than 14 causes the method to throw `\RangeException`.
 
@@ -86,7 +86,7 @@ $float = SecureRandom::positiveFloat(0);   // Throws \RangeException
 $float = SecureRandom::positiveFloat(15);  // Throws \RangeException  
 ```
 
-## Meshachviktor\SecureRandom\SecureRandom::negativeFloat(int $fractional_digits = 14) :float
+## SecureRandom::negativeFloat(int $fractional_digits = 14) :float
 
 The `negativeFloat()` method returns a random negative floating point number. The method takes an optional integer argument, `$fractional_digits`, whose value defaults to 14. The value of `$fractional_digits` determines how many decimal digits will appear after the decimal point of the floating point number generated. Supplying a value less than 1 or greater than 14 causes the method to throw `\RangeException`.
 
@@ -100,7 +100,7 @@ $float = SecureRandom::negativeFloat(0);   // Throws \RangeException
 $float = SecureRandom::negativeFloat(15);  // Throws \RangeException
 ```
 
-## Meshachviktor\SecureRandom\SecureRandom::floatBetween(float $min, float $max) :float
+## SecureRandom::floatBetween(float $min, float $max) :float
 
 The `floatBetween()` method takes two float arguments `$min` and `$max` and returns a floating point number between the range of $min and $max (inclusive). The method accepts only positive float values and as a results only returns positive values. The method will throw `\RangeException` if the value of $min or $max is outside of the range 0.1 and 0.99999999999999. The method will also throw `Meshachviktor\SecureRandom\Exception\ValueException` if the value of `$min` is greater than the value of `$max`.
 
@@ -122,7 +122,7 @@ Due to the effect of rounding, the fractional parts of values returned by method
 
 The library provides some functions for generating random integers. Values returned by these functions are between `PHP_INT_MIN` and `PHP_INT_MAX` (inclusive).
 
-## Meshachviktor\SecureRandom\SecureRandom::integer() :int
+## SecureRandom::integer() :int
 
 The `integer()` method takes no argument and returns a value between `PHP_INT_MIN` and `PHP_INT_MAX`.
 
@@ -135,7 +135,7 @@ $integer = SecureRandom::integer();    // 898224759918621175
 $integer = SecureRandom::integer();    // -4550407951101420676
 ```
 
-## Meshachviktor\SecureRandom\SecureRandom::positiveInteger(int $length = 19) :int
+## SecureRandom::positiveInteger(int $length = 19) :int
 
 The `positiveInteger()` method returns a random positive integer. The method takes an integer argument, `$length`, whose value defaults to 19. Supplying a value less than 1 or greater than 19 causes the method to throw `\RangeException`. The method returns an integer whose total number of digits equals the value of `$length`.
 
@@ -149,7 +149,7 @@ $integer = SecureRandom::positiveInteger(0);   // Throws \RangeException
 $integer = SecureRandom::positiveInteger(20);  // Throws \RangeException
 ```
 
-## Meshachviktor\SecureRandom\SecureRandom::negativeInteger(int $length = 19) :int
+## SecureRandom::negativeInteger(int $length = 19) :int
 
 The `negativeInteger()` method returns a random negative integer. The method takes an integer argument, `$length`, whose value defaults to 19. Supplying a value less than 1 or greater than 19 causes the method to throw `\RangeException`. The method returns a negative integer whose total number of digits equals the value of `$length`.
 
@@ -163,7 +163,7 @@ $integer = SecureRandom::negativeInteger(0);   // Throws \RangeException
 $integer = SecureRandom::negativeInteger(20);  // Throws \RangeException  
 ```
 
-## Meshachviktor\SecureRandom\SecureRandom::integerBetween(int $min, int $max) :int
+## SecureRandom::integerBetween(int $min, int $max) :int
 
 The `integerBetween()` method takes two integer arguments `$min` and `$max` and returns an integer between the range of `$min` and `$max` (inclusive). The method will throw `Meshachviktor\SecureRandom\Exception\ValueException` if the value of `$min` is greater than the value of `$max`.
 
@@ -187,7 +187,7 @@ The library provides some functions for generating random strings. There are thr
 When generating hexadecimal strings and alphanumric strings the corresponding methods take a single integer argument, `$length`, which determines how long the generated string should be. The value of `$lenth` defaults to 64. `\RangeException` is thrown is the value of `$length` is less than 1 or if it is greater than 64.   
 The method that generates UUIDs takes no argument.
 
-## Meshachviktor\SecureRandom\SecureRandom::hexadecimalString(int $length = 64) :string
+## SecureRandom::hexadecimalString(int $length = 64) :string
 
 Generates a hexadecimal string of given length.
 
@@ -200,7 +200,7 @@ $string = SecureRandom::hexadecimalString(0);     // Throws \RangeException
 $string = SecureRandom::hexadecimalString(65);    // Throws \RangeException  
 ```
 
-## Meshachviktor\SecureRandom\SecureRandom::alphanumericString(int $length = 64) :string
+## SecureRandom::alphanumericString(int $length = 64) :string
 
 Generates an alphanumeric string of given length.
 
@@ -213,7 +213,7 @@ $string = SecureRandom::alphanumericString(0);     // Throws \RangeException
 $string = SecureRandom::alphanumericString(65);    // Throws \RangeException
 ```
 
-## Meshachviktor\SecureRandom\SecureRandom::uuid() : string
+## SecureRandom::uuid() : string
 
 Generates version 4 UUIDs.
 
