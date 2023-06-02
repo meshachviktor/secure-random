@@ -44,7 +44,7 @@ You can generate random bytes using the library by calling the `bytes()` method.
 
 ## SecureRandom::bytes(int $length) :string
 
-This method takes an optional integer argument named `$length`. By default `$length` has a value of 64 but can be any number between the range of 1 and 64 (inclusive). Supplying a value less than 1 or greater than 64 will result in the method throwing `RangeException`. The `bytes()` method is limited to returning a maximum of 64 bytes due to a lot of reasons. If you need more than 64 bytes use PHP's built in `random_bytes()` instead.
+This method takes an optional integer argument named `$length`. By default `$length` has a value of 64 but can be any number between the range of 1 and 64 (inclusive). Supplying a value less than 1 or greater than 64 will result in the method throwing `\RangeException`. The `bytes()` method is limited to returning a maximum of 64 bytes due to a lot of reasons. If you need more than 64 bytes use PHP's built in `random_bytes()` instead.
 
 ## Examples
 
@@ -52,8 +52,8 @@ This method takes an optional integer argument named `$length`. By default `$len
 $bytes = SecureRandom::bytes();    // Returns 64 bytes.
 $bytes = SecureRandom::bytes(1);   // Returns 1 byte.
 $bytes = SecureRandom::bytes(32);  // Returns 32 bytes.
-$bytes = SecureRandom::bytes(0);   // Throws RangeException
-$bytes = SecureRandom::bytes(65);  // Throws RangeException
+$bytes = SecureRandom::bytes(0);   // Throws \RangeException
+$bytes = SecureRandom::bytes(65);  // Throws \RangeException
 ```
 
 ## **Generating random floats**
@@ -62,19 +62,19 @@ The library provides some methods for generating random floating point numbers. 
 
 ## SecureRandom::float(int $fractional_digits = 14) :float
 
-The `float()` method returns a random positive or negative floating point number. The method takes an optional integer argument, `$fractional_digits`, whose value defaults to 14. The value of `$fractional_digits` determines how many decimal digits will appear after the decimal point of the floating point number generated. Supplying a value less than 1 or greater than 14 causes the method to throw `RangeException`.
+The `float()` method returns a random positive or negative floating point number. The method takes an optional integer argument, `$fractional_digits`, whose value defaults to 14. The value of `$fractional_digits` determines how many decimal digits will appear after the decimal point of the floating point number generated. Supplying a value less than 1 or greater than 14 causes the method to throw `\RangeException`.
 
 ## Examples
 ```php
 $float = SecureRandom::float();    // 0.13456788654122
 $float = SecureRandom::float(2);   // 0.41
 $float = SecureRandom::float(10);  // -0.5774096379
-$float = SecureRandom::float(0);   // Throws RangeException
-$float = SecureRandom::float(15);  // Throws RangeException
+$float = SecureRandom::float(0);   // Throws \RangeException
+$float = SecureRandom::float(15);  // Throws \RangeException
 ```
 ## SecureRandom::positiveFloat(int $fractional_digits = 14) :float
 
-The `positiveFloat()` method returns a random positive floating point number. The method takes an optional integer argument, `$fractional_digits`, whose value defaults to 14. The value of `$fractional_digits` determines how many decimal digits will appear after the decimal point of the floating point number generated. Supplying a value less than 1 or greater than 14 causes the method to throw `RangeException`.
+The `positiveFloat()` method returns a random positive floating point number. The method takes an optional integer argument, `$fractional_digits`, whose value defaults to 14. The value of `$fractional_digits` determines how many decimal digits will appear after the decimal point of the floating point number generated. Supplying a value less than 1 or greater than 14 causes the method to throw `\RangeException`.
 
 ## Examples
 
@@ -82,13 +82,13 @@ The `positiveFloat()` method returns a random positive floating point number. Th
 $float = SecureRandom::positiveFloat();    // 0.92120198810972
 $float = SecureRandom::positiveFloat(2);   // 0.12
 $float = SecureRandom::positiveFloat(10);  // 0.7222526563
-$float = SecureRandom::positiveFloat(0);   // Throws RangeException 
-$float = SecureRandom::positiveFloat(15);  // Throws RangeException  
+$float = SecureRandom::positiveFloat(0);   // Throws \RangeException 
+$float = SecureRandom::positiveFloat(15);  // Throws \RangeException  
 ```
 
 ## SecureRandom::negativeFloat(int $fractional_digits = 14) :float
 
-The `negativeFloat()` method returns a random negative floating point number. The method takes an optional integer argument, `$fractional_digits`, whose value defaults to 14. The value of `$fractional_digits` determines how many decimal digits will appear after the decimal point of the floating point number generated. Supplying a value less than 1 or greater than 14 causes the method to throw `RangeException`.
+The `negativeFloat()` method returns a random negative floating point number. The method takes an optional integer argument, `$fractional_digits`, whose value defaults to 14. The value of `$fractional_digits` determines how many decimal digits will appear after the decimal point of the floating point number generated. Supplying a value less than 1 or greater than 14 causes the method to throw `\RangeException`.
 
 ## Examples
 
@@ -96,20 +96,20 @@ The `negativeFloat()` method returns a random negative floating point number. Th
 $float = SecureRandom::negativeFloat();    // -0.13456788654122
 $float = SecureRandom::negativeFloat(2);   // -0.41
 $float = SecureRandom::negativeFloat(10);  // -0.5774096379
-$float = SecureRandom::negativeFloat(0);   // Throws RangeException
-$float = SecureRandom::negativeFloat(15);  // Throws RangeException
+$float = SecureRandom::negativeFloat(0);   // Throws \RangeException
+$float = SecureRandom::negativeFloat(15);  // Throws \RangeException
 ```
 
 ## SecureRandom::floatBetween(float $min, float $max) :float
 
-The `floatBetween()` method takes two float arguments `$min` and `$max` and returns a floating point number between the range of $min and $max (inclusive). The method accepts only positive float values and as a results only returns positive values. The method will throw `RangeException` if the value of $min or $max is outside of the range 0.1 and 0.99999999999999. The method will also throw `Meshachviktor\SecureRandom\Exception\ValueException` if the value of `$min` is greater than the value of `$max`.
+The `floatBetween()` method takes two float arguments `$min` and `$max` and returns a floating point number between the range of $min and $max (inclusive). The method accepts only positive float values and as a results only returns positive values. The method will throw `\RangeException` if the value of $min or $max is outside of the range 0.1 and 0.99999999999999. The method will also throw `Meshachviktor\SecureRandom\Exception\ValueException` if the value of `$min` is greater than the value of `$max`.
 
 ## Examples
 
 ```php
 $float = SecureRandom::floatBetween(0.1, 0.2);                        // 0.16708918081238
 $float = SecureRandom::floatBetween(0.7777, 0.8888);                  // 0.8713798653067
-$float = SecureRandom::floatBetween(0.25555555, 0.9999999999999999);  // Throws RangeException
+$float = SecureRandom::floatBetween(0.25555555, 0.9999999999999999);  // Throws \RangeException
 $float = SecureRandom::floatBetween(0.3, 0.2);                        // Throws ValueException
 ```
 
@@ -137,7 +137,7 @@ $integer = SecureRandom::integer();    // -4550407951101420676
 
 ## SecureRandom::positiveInteger(int $length = 19) :int
 
-The `positiveInteger()` method returns a random positive integer. The method takes an integer argument, `$length`, whose value defaults to 19. Supplying a value less than 1 or greater than 19 causes the method to throw `RangeException`. The method returns an integer whose total number of digits equals the value of `$length`.
+The `positiveInteger()` method returns a random positive integer. The method takes an integer argument, `$length`, whose value defaults to 19. Supplying a value less than 1 or greater than 19 causes the method to throw `\RangeException`. The method returns an integer whose total number of digits equals the value of `$length`.
 
 ## Examples
 
@@ -145,13 +145,13 @@ The `positiveInteger()` method returns a random positive integer. The method tak
 $integer = SecureRandom::positiveInteger();    // 2562604524331120248 (19 digits long by default)
 $integer = SecureRandom::positiveInteger(6);   // 197955 (6 digits long)
 $integer = SecureRandom::positiveInteger(1);   // 7 (1 digit long)
-$integer = SecureRandom::positiveInteger(0);   // Throws RangeException
-$integer = SecureRandom::positiveInteger(20);  // Throws RangeException
+$integer = SecureRandom::positiveInteger(0);   // Throws \RangeException
+$integer = SecureRandom::positiveInteger(20);  // Throws \RangeException
 ```
 
 ## SecureRandom::negativeInteger(int $length = 19) :int
 
-The `negativeInteger()` method returns a random negative integer. The method takes an integer argument, `$length`, whose value defaults to 19. Supplying a value less than 1 or greater than 19 causes the method to throw `RangeException`. The method returns a negative integer whose total number of digits equals the value of `$length`.
+The `negativeInteger()` method returns a random negative integer. The method takes an integer argument, `$length`, whose value defaults to 19. Supplying a value less than 1 or greater than 19 causes the method to throw `\RangeException`. The method returns a negative integer whose total number of digits equals the value of `$length`.
 
 ## Examples
 
@@ -159,8 +159,8 @@ The `negativeInteger()` method returns a random negative integer. The method tak
 $integer = SecureRandom::negativeInteger();    // -4259319387199823755 (19 digits long by default)
 $integer = SecureRandom::negativeInteger(6);   // -808209 (6 digits long)
 $integer = SecureRandom::negativeInteger(1);   // -5 (1 digit long)
-$integer = SecureRandom::negativeInteger(0);   // Throws RangeException
-$integer = SecureRandom::negativeInteger(20);  // Throws RangeException  
+$integer = SecureRandom::negativeInteger(0);   // Throws \RangeException
+$integer = SecureRandom::negativeInteger(20);  // Throws \RangeException  
 ```
 
 ## SecureRandom::integerBetween(int $min, int $max) :int
@@ -184,7 +184,7 @@ The library provides some functions for generating random strings. There are thr
 - Mixed case alphanumeric strings
 - Version 4 UUIDs
 
-When generating hexadecimal strings and alphanumric strings the corresponding methods take a single integer argument, `$length`, which determines how long the generated string should be. The value of `$lenth` defaults to 64. `RangeException` is thrown is the value of `$length` is less than 1 or if it is greater than 64.   
+When generating hexadecimal strings and alphanumric strings the corresponding methods take a single integer argument, `$length`, which determines how long the generated string should be. The value of `$lenth` defaults to 64. `\RangeException` is thrown is the value of `$length` is less than 1 or if it is greater than 64.   
 The method that generates UUIDs takes no argument.
 
 ## SecureRandom::hexadecimalString(int $length = 64) :string
@@ -196,8 +196,8 @@ Generates a hexadecimal string of given length.
 ```php
 $string = SecureRandom::hexadecimalString(8);     // 5bc3aac3
 $string = SecureRandom::hexadecimalString(16);    // 6bc28f1fc391c386
-$string = SecureRandom::hexadecimalString(0);     // Throws RangeException
-$string = SecureRandom::hexadecimalString(65);    // Throws RangeException  
+$string = SecureRandom::hexadecimalString(0);     // Throws \RangeException
+$string = SecureRandom::hexadecimalString(65);    // Throws \RangeException  
 ```
 
 ## SecureRandom::alphanumericString(int $length = 64) :string
@@ -209,8 +209,8 @@ Generates an alphanumeric string of given length.
 ```php
 $string = SecureRandom::alphanumericString(8);     // fxbjwCmi
 $string = SecureRandom::alphanumericString(16);    // 84XxE8OY7CKQg0na
-$string = SecureRandom::alphanumericString(0);     // Throws RangeException
-$string = SecureRandom::alphanumericString(65);    // Throws RangeException
+$string = SecureRandom::alphanumericString(0);     // Throws \RangeException
+$string = SecureRandom::alphanumericString(65);    // Throws \RangeException
 ```
 
 ## SecureRandom::uuid() : string
