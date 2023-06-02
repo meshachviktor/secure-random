@@ -2,7 +2,7 @@
 
 namespace  Meshachviktor\SecureRandom;
 
-use \RangeException;
+use RangeException;
 use Meshachviktor\SecureRandom\Exception\ValueException;
 
 class SecureRandom {
