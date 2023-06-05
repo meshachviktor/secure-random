@@ -13,7 +13,6 @@ final class IntegerTest extends TestCase
 
     public function testInteger(): void
     {
-
         $this->assertIsInt(SecureRandom::integer());
     }
 
