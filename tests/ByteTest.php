@@ -12,13 +12,11 @@ final class ByteTest extends TestCase
 
     public function testByte(): void
     {
-
         $this->assertIsString(SecureRandom::bytes());
     }
     
     public function testByteException(): void
     {
-
         $this->expectException(RangeException::class);
         SecureRandom::bytes(-1);
         SecureRandom::bytes(65);

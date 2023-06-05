@@ -235,8 +235,8 @@ class SecureRandom {
     public static function uuid() :string {
         $bytes = self::bytes(16);
         $time_low = bin2hex(substr($bytes, 0, 4));
-        $time_mid = bin2hex(substr($bytes, 5, 2));
-        $time_high_and_version = bin2hex(substr($bytes, 7, 2));
+        $time_mid = bin2hex(substr($bytes, 4, 2));
+        $time_high_and_version = bin2hex(substr($bytes, 6, 2));
         $clock_seq_and_reserved = bin2hex(substr($bytes, 8, 1));
         $clock_seq_low = bin2hex(substr($bytes, 9, 1));
         $node = bin2hex(substr($bytes, 10, 6));
