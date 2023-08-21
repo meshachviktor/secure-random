@@ -1,4 +1,4 @@
-This library was originally built with resources from Arteri. 
+This library was originally built with resources from Arteri Africa. 
 
 # **Introduction**
 
