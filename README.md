@@ -1,3 +1,4 @@
+This library was originally built with resources from Arteri. 
 
 # **Introduction**
 
